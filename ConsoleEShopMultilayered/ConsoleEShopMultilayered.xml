@@ -1,0 +1,885 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ConsoleEShopMultilayered</name>
+    </assembly>
+    <members>
+        <member name="T:ConsoleEShopMultilayered.BLL.Admin">
+            <summary>
+            Class for user with type Administrator
+            </summary>
+        </member>
+        <member name="F:ConsoleEShopMultilayered.BLL.Admin.user">
+            <summary>
+            User with type Administrator
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Admin.ViewAllGoods">
+            <summary>
+            Get list of all goods in data
+            </summary>
+            <returns>List of all goods</returns>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Admin.ViewAllOrders">
+            <summary>
+            Get list of all orders in data
+            </summary>
+            <returns>List of all orders</returns>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Admin.SearchByName(System.String)">
+            <summary>
+            Get list of goods which have such name
+            </summary>
+            <param name="name">Name of goods</param>
+            <returns>List of goods with such name</returns>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Admin.AddToBasket(ConsoleEShopMultilayered.DAL.Entities.Goods)">
+            <summary>
+            Add goods to basket to create new order
+            </summary>
+            <param name="goods">Good what you want to buy</param>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Admin.Checkout(System.String,System.String,System.String)">
+            <summary>
+            Create new order
+            </summary>
+            <param name="customerName">Name of customer</param>
+            <param name="customerPhoneNumber">Customer Phone</param>
+            <param name="deliveryAddress">Delivery adress</param>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Admin.ChangeStatus(System.Int32,ConsoleEShopMultilayered.DAL.Enums.OrderStatus)">
+            <summary>
+            Change order status by ID
+            </summary>
+            <param name="id">Order id which you want to change</param>
+            <param name="orderStatus">Order status</param>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Admin.DenyOrder(System.Int32)">
+            <summary>
+            Deny order by ID
+            </summary>
+            <param name="id">Id of order which you want to deny</param>
+            <returns>True if order was deny, or false if its immposible</returns>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Admin.ShowAllUsers">
+            <summary>
+            get list of all users from data
+            </summary>
+            <returns>List of all users</returns>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Admin.ChangeProfile(ConsoleEShopMultilayered.DAL.Entities.User,ConsoleEShopMultilayered.DAL.Entities.User)">
+            <summary>
+            Change user profile
+            </summary>
+            <param name="u">User which you want to change</param>
+            <param name="temp">New information</param>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Admin.AddGoods(ConsoleEShopMultilayered.DAL.Entities.Goods)">
+            <summary>
+            Add new goods to data
+            </summary>
+            <param name="goods">New good</param>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Admin.ChangeGood(ConsoleEShopMultilayered.DAL.Entities.Goods,System.Int32)">
+            <summary>
+            Change good information by id
+            </summary>
+            <param name="goods">New information</param>
+            <param name="id">Goods id which you want to change</param>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Admin.LogOut">
+            <summary>
+            Log out
+            </summary>
+        </member>
+        <member name="T:ConsoleEShopMultilayered.BLL.Guest">
+            <summary>
+            Class for guest
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Guest.ViewAllGoods">
+            <summary>
+            Get list of all goods in data
+            </summary>
+            <returns>List of all goods</returns>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Guest.SearchByName(System.String)">
+            <summary>
+            Get list of goods which have such name
+            </summary>
+            <param name="name">Name of goods</param>
+            <returns>List of goods with such name</returns>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Guest.Register(ConsoleEShopMultilayered.DAL.Entities.User)">
+            <summary>
+            Register new account for user
+            </summary>
+            <param name="user">New user</param>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Guest.LogIn(System.String,System.String)">
+            <summary>
+            Log in to account
+            </summary>
+            <param name="login">User login</param>
+            <param name="password">User password</param>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Guest.CheckLogin(System.String)">
+            <summary>
+            Check user login
+            </summary>
+            <param name="login">User login</param>
+            <returns>False if this login exist in data already, else true</returns>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Guest.CheckForLogIn(System.String,System.String)">
+            <summary>
+            Check correct login and password to LogIn
+            </summary>
+            <param name="login">User login</param>
+            <param name="password">User password</param>
+            <returns>False if login or password wrong</returns>
+        </member>
+        <member name="T:ConsoleEShopMultilayered.BLL.Registered">
+            <summary>
+            Class for user with type Registered
+            </summary>
+        </member>
+        <member name="F:ConsoleEShopMultilayered.BLL.Registered.user">
+            <summary>
+            User with type Registered
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Registered.ViewAllGoods">
+            <summary>
+            Get list of all goods in data
+            </summary>
+            <returns>List of all goods</returns>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Registered.SearchByName(System.String)">
+            <summary>
+            Get list of goods which have such name
+            </summary>
+            <param name="name">Name of goods</param>
+            <returns>List of goods with such name</returns>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Registered.AddToBasket(ConsoleEShopMultilayered.DAL.Entities.Goods)">
+            <summary>
+            Add goods to basket to create new order
+            </summary>
+            <param name="goods">Good what you want to buy</param>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Registered.Checkout(System.String,System.String,System.String)">
+            <summary>
+            Create new order
+            </summary>
+            <param name="customerName">Name of customer</param>
+            <param name="customerPhoneNumber">Customer Phone</param>
+            <param name="deliveryAddress">Delivery adress</param>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Registered.DenyOrder(System.Int32)">
+            <summary>
+            Deny order by ID
+            </summary>
+            <param name="id">Id of order which you want to deny</param>
+            <returns>True if order was deny, or false if its immposible</returns>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Registered.UserOrders">
+            <summary>
+            Get all orders for this user
+            </summary>
+            <returns>List of orders</returns>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Registered.UserCompleteOrders">
+            <summary>
+            Get completed orders for this user
+            </summary>
+            <returns>List of orders</returns>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Registered.ChangeStatusToComplete(System.Int32)">
+            <summary>
+            Change order status by ID
+            </summary>
+            <param name="id">Order id which you want to change</param>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Registered.ChangeProfile(ConsoleEShopMultilayered.DAL.Entities.User)">
+            <summary>
+            Change this user profile
+            </summary>
+            <param name="temp">New information</param>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.BLL.Registered.LogOut">
+            <summary>
+            Log out
+            </summary>
+        </member>
+        <member name="T:ConsoleEShopMultilayered.DAL.Entities.Goods">
+            <summary>
+            Class goods
+            </summary>
+        </member>
+        <member name="F:ConsoleEShopMultilayered.DAL.Entities.Goods.Count">
+            <summary>
+            Count of all goods
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Entities.Goods.Id">
+            <summary>
+            Unique good id
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Entities.Goods.Name">
+            <summary>
+            Name of goods
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Entities.Goods.Price">
+            <summary>
+            Goods price
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Entities.Goods.Description">
+            <summary>
+            Goods description
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.DAL.Entities.Goods.#ctor(System.String,System.String,System.Decimal)">
+            <summary>
+            Goods constructor
+            </summary>
+            <param name="name">Name of good</param>
+            <param name="description">Goods description</param>
+            <param name="price">Goods price</param>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.DAL.Entities.Goods.Equals(ConsoleEShopMultilayered.DAL.Entities.Goods)">
+            <summary>
+            Comparison of two goods
+            </summary>
+            <param name="other">Other good</param>
+            <returns>True if goods equals</returns>
+        </member>
+        <member name="T:ConsoleEShopMultilayered.DAL.Entities.Order">
+            <summary>
+            Class order
+            </summary>
+        </member>
+        <member name="F:ConsoleEShopMultilayered.DAL.Entities.Order.count">
+            <summary>
+            Count of all orders
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Entities.Order.Id">
+            <summary>
+            Unique order id
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Entities.Order.CustomerLogin">
+            <summary>
+            Customer Login
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Entities.Order.Goods">
+            <summary>
+            List of Goods from basket
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Entities.Order.CustomerName">
+            <summary>
+            Customer Name
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Entities.Order.CustomerPhoneNumber">
+            <summary>
+            Customer Phone Number
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Entities.Order.DeliveryAddress">
+            <summary>
+            Delivery Address
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Entities.Order.dateTimeOfOrder">
+            <summary>
+            DateTime now
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Entities.Order.orderStatus">
+            <summary>
+            Order Status
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.DAL.Entities.Order.#ctor(System.String,System.String,System.String,System.String,System.Collections.Generic.List{ConsoleEShopMultilayered.DAL.Entities.Goods})">
+            <summary>
+            Order constructor
+            </summary>
+            <param name="customerLogin"> Customer Login</param>
+            <param name="customerName"> Customer Name</param>
+            <param name="customerPhoneNumber"> Customer Phone Number</param>
+            <param name="deliveryAddress">Delivery Address</param>
+            <param name="goods">List of Goods from basket</param>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.DAL.Entities.Order.Equals(ConsoleEShopMultilayered.DAL.Entities.Order)">
+            <summary>
+            Comparison of two orders
+            </summary>
+            <param name="other">Other order</param>
+            <returns>True if orders equals</returns>
+        </member>
+        <member name="T:ConsoleEShopMultilayered.DAL.Entities.User">
+            <summary>
+            Class user
+            </summary>
+        </member>
+        <member name="F:ConsoleEShopMultilayered.DAL.Entities.User.Count">
+            <summary>
+             Count of all users
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Entities.User.Id">
+            <summary>
+            Unique user id
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Entities.User.Login">
+            <summary>
+            User login
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Entities.User.Password">
+            <summary>
+            User password
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Entities.User.Status">
+            <summary>
+            User status - Administrator or Registered
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Entities.User.Basket">
+            <summary>
+            User basket
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.DAL.Entities.User.#ctor(System.String,System.String,ConsoleEShopMultilayered.DAL.Enums.UserType)">
+            <summary>
+            User constructor
+            </summary>
+            <param name="login"> User login</param>
+            <param name="password">User password</param>
+            <param name="status">User status - Administrator or Registered</param>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.DAL.Entities.User.Equals(ConsoleEShopMultilayered.DAL.Entities.User)">
+            <summary>
+            Comparison of two users
+            </summary>
+            <param name="other">Other user</param>
+            <returns>True if users equals</returns>
+        </member>
+        <member name="T:ConsoleEShopMultilayered.DAL.Enums.OrderStatus">
+            <summary>
+            Order status
+            </summary>
+        </member>
+        <member name="T:ConsoleEShopMultilayered.DAL.Enums.UserType">
+            <summary>
+            Type of user - Admin or Registeres user
+            </summary>
+        </member>
+        <member name="T:ConsoleEShopMultilayered.DAL.Interfaces.IGoods">
+            <summary>
+            Interface of Goods
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Interfaces.IGoods.Id">
+            <summary>
+            Unique good id
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Interfaces.IGoods.Name">
+            <summary>
+            Name of goods
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Interfaces.IGoods.Price">
+            <summary>
+            Goods price
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Interfaces.IGoods.Description">
+            <summary>
+            Goods description
+            </summary>
+        </member>
+        <member name="T:ConsoleEShopMultilayered.DAL.Interfaces.IOrder">
+            <summary>
+            Interface for Order
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Interfaces.IOrder.Id">
+            <summary>
+            Unique order id
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Interfaces.IOrder.CustomerLogin">
+            <summary>
+            Customer Login
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Interfaces.IOrder.Goods">
+            <summary>
+            List of Goods from basket
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Interfaces.IOrder.CustomerName">
+            <summary>
+            Customer Name
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Interfaces.IOrder.CustomerPhoneNumber">
+            <summary>
+            Customer Phone Number
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Interfaces.IOrder.DeliveryAddress">
+            <summary>
+            Delivery Address
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Interfaces.IOrder.dateTimeOfOrder">
+            <summary>
+            DateTime now
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Interfaces.IOrder.orderStatus">
+            <summary>
+            Order Status
+            </summary>
+        </member>
+        <member name="T:ConsoleEShopMultilayered.DAL.Interfaces.IUser">
+            <summary>
+            Interface for User
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Interfaces.IUser.Id">
+            <summary>
+            Unique user id
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Interfaces.IUser.Login">
+            <summary>
+            User login
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Interfaces.IUser.Password">
+            <summary>
+            User password
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Interfaces.IUser.Status">
+            <summary>
+            User status - Administrator or Registered
+            </summary>
+        </member>
+        <member name="P:ConsoleEShopMultilayered.DAL.Interfaces.IUser.Basket">
+            <summary>
+            User basket
+            </summary>
+        </member>
+        <member name="T:ConsoleEShopMultilayered.DAL.Repository.IGoodsRepository">
+            <summary>
+            Interface for MockGoodsRepository
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.DAL.Repository.IGoodsRepository.GetAll">
+            <summary>
+            Get all goods from data
+            </summary>
+            <returns>List of all goods</returns>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.DAL.Repository.IGoodsRepository.GetGoodsByName(System.String)">
+            <summary>
+            Get goods by name from data
+            </summary>
+            <param name="name">Name of goods</param>
+            <returns>List of goods with such name</returns>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.DAL.Repository.IGoodsRepository.Add(ConsoleEShopMultilayered.DAL.Entities.Goods)">
+            <summary>
+            Add new good to data
+            </summary>
+            <param name="goods">New good</param>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.DAL.Repository.IGoodsRepository.Change(ConsoleEShopMultilayered.DAL.Entities.Goods,System.Int32)">
+            <summary>
+            Change good information
+            </summary>
+            <param name="goods">New information</param>
+            <param name="id">Goods Id which you want to change</param>
+        </member>
+        <member name="T:ConsoleEShopMultilayered.DAL.Repository.IOrderRepository">
+            <summary>
+            Interface for MockOrderRepository
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.DAL.Repository.IOrderRepository.Checkout(ConsoleEShopMultilayered.DAL.Entities.Order)">
+            <summary>
+            Add  new order to data
+            </summary>
+            <param name="order">New order</param>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.DAL.Repository.IOrderRepository.ChangeStatus(ConsoleEShopMultilayered.DAL.Enums.OrderStatus,System.Int32)">
+            <summary>
+            Change order status by id
+            </summary>
+            <param name="status">New order status</param>
+            <param name="id">Order id which you want to change</param>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.DAL.Repository.IOrderRepository.GetAll">
+            <summary>
+            Get all orders from data
+            </summary>
+            <returns>List of all orders</returns>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.DAL.Repository.IOrderRepository.GetUserOders(System.String)">
+            <summary>
+            Get all orders for user with such login
+            </summary>
+            <param name="login">User login</param>
+            <returns>List of orders</returns>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.DAL.Repository.IOrderRepository.GetUserCompleteOders(System.String)">
+            <summary>
+            Get completed orders for user with such login
+            </summary>
+            <param name="login">User login</param>
+            <returns>List of completed orders</returns>
+        </member>
+        <member name="T:ConsoleEShopMultilayered.DAL.Repository.IUserRepository">
+            <summary>
+            Interface for MockUserRepository
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.DAL.Repository.IUserRepository.Add(ConsoleEShopMultilayered.DAL.Entities.User)">
+            <summary>
+            Add new user to data
+            </summary>
+            <param name="user">New User</param>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.DAL.Repository.IUserRepository.ChangePersonalInformation(ConsoleEShopMultilayered.DAL.Entities.User,ConsoleEShopMultilayered.DAL.Entities.User)">
+            <summary>
+            Change information about user
+            </summary>
+            <param name="user">User which you want to change</param>
+            <param name="temp">New information</param>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.DAL.Repository.IUserRepository.GetAll">
+            <summary>
+            Get all users from data
+            </summary>
+            <returns>List of all users</returns>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.DAL.Repository.IUserRepository.Authorization(System.String,System.String)">
+            <summary>
+            Log in to account
+            </summary>
+            <param name="login">User login</param>
+            <param name="password">User password</param>
+        </member>
+        <member name="T:ConsoleEShopMultilayered.DAL.Repository.MockGoodsRepository">
+            <summary>
+            Class for Mock goods data
+            </summary>
+        </member>
+        <member name="F:ConsoleEShopMultilayered.DAL.Repository.MockGoodsRepository.GoodsRepository">
+            <summary>
+            Object of mock
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.DAL.Repository.MockGoodsRepository.#cctor">
+            <summary>
+            Constructor to initialization mock 
+            </summary>
+        </member>
+        <member name="T:ConsoleEShopMultilayered.DAL.Repository.MockOrderRepository">
+            <summary>
+            Class for Mock order data
+            </summary>
+        </member>
+        <member name="F:ConsoleEShopMultilayered.DAL.Repository.MockOrderRepository.OrderRepository">
+            <summary>
+            Object of mock
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.DAL.Repository.MockOrderRepository.#cctor">
+            <summary>
+            Constructor to initialization mock 
+            </summary>
+        </member>
+        <member name="T:ConsoleEShopMultilayered.DAL.Repository.MockUserRepository">
+            <summary>
+            Class for Mock users data
+            </summary>
+        </member>
+        <member name="F:ConsoleEShopMultilayered.DAL.Repository.MockUserRepository.UserRepository">
+            <summary>
+            Object of mock
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.DAL.Repository.MockUserRepository.#cctor">
+            <summary>
+            Constructor to initialization mock 
+            </summary>
+        </member>
+        <member name="T:ConsoleEShopMultilayered.DL.Data">
+            <summary>
+            Class Data
+            </summary>
+        </member>
+        <member name="F:ConsoleEShopMultilayered.DL.Data.goods">
+            <summary>
+            All goods
+            </summary>
+        </member>
+        <member name="F:ConsoleEShopMultilayered.DL.Data.users">
+            <summary>
+            All users
+            </summary>
+        </member>
+        <member name="F:ConsoleEShopMultilayered.DL.Data.orders">
+            <summary>
+            All orders
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.DL.Data.Clean">
+            <summary>
+            Refresh the data
+            </summary>
+        </member>
+        <member name="T:ConsoleEShopMultilayered.PL.ViewAdmin">
+            <summary>
+            View for Admin
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewAdmin.Menu">
+            <summary>
+            Menu for Admin
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewAdmin.HandleMenu">
+            <summary>
+            Handle of Admin menu
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewAdmin.ShowAllProducts">
+            <summary>
+             Show all goods from data
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewAdmin.ShowAllOrders">
+            <summary>
+            Show all orders from data
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewAdmin.ChangeOrderStatus">
+            <summary>
+            Change order status
+            Input order id
+            Input new status
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewAdmin.SearchGoodsByName">
+            <summary>
+            Show goods whith such name
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewAdmin.CreateNewOrder">
+            <summary>
+            Add goods to user basket
+            Input goods id 
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewAdmin.CheckoutOrder">
+            <summary>
+            Create new order
+            Input order information
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewAdmin.DenyOrder">
+            <summary>
+            Deny order 
+            Input order id
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewAdmin.ShowUsers">
+            <summary>
+            Show all users from data
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewAdmin.ChangeUserProfile">
+            <summary>
+            Change user information
+            Input user id
+            Input new information
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewAdmin.Change">
+            <summary>
+            Input new information
+            </summary>
+            <returns>New info</returns>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewAdmin.AddGoods">
+            <summary>
+            Add new goods to data
+            Input good information
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewAdmin.ChangeGoods">
+            <summary>
+            Change goods information
+            Input goods id
+            Input new information
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewAdmin.LogOut">
+            <summary>
+            Log out from account
+            </summary>
+        </member>
+        <member name="T:ConsoleEShopMultilayered.PL.ViewGuest">
+            <summary>
+            View for Guest
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewGuest.Menu">
+            <summary>
+            Menu for Guest
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewGuest.HandleMenu">
+            <summary>
+            Handle of Guest menu
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewGuest.ShowAllGoods">
+            <summary>
+            Show all goods from data
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewGuest.SearchGoodsByName">
+            <summary>
+            Show goods whith such name
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewGuest.Register">
+            <summary>
+            Register new account
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewGuest.LogIn">
+            <summary>
+            Log in to account
+            Input login and password
+            </summary>
+        </member>
+        <member name="T:ConsoleEShopMultilayered.PL.ViewHandler">
+            <summary>
+            Handler of view
+            </summary>
+        </member>
+        <member name="T:ConsoleEShopMultilayered.PL.ViewHandler.Menu">
+            <summary>
+            Delegate for show Guest or Registered or Admin menu
+            </summary>
+        </member>
+        <member name="F:ConsoleEShopMultilayered.PL.ViewHandler.menu">
+            <summary>
+            Delegate Menu
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewHandler.#cctor">
+            <summary>
+            Initialization menu
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewHandler.MainHandle">
+            <summary>
+            Invoke menu to show items menu
+            </summary>
+        </member>
+        <member name="T:ConsoleEShopMultilayered.PL.ViewRegistered">
+            <summary>
+            View for Registered
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewRegistered.Menu">
+            <summary>
+            Menu for Registered
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewRegistered.HandleMenu">
+            <summary>
+            Handle of Registered menu
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewRegistered.ShowAllProducts">
+            <summary>
+             Show all goods from data
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewRegistered.SearchGoodsByName">
+            <summary>
+            Show goods whith such name
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewRegistered.CreateNewOrder">
+            <summary>
+            Add goods to user basket
+            Input goods id 
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewRegistered.CheckoutOrder">
+            <summary>
+            Create new order
+            Input order information
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewRegistered.DenyOrder">
+            <summary>
+            Deny order 
+            Input order id
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewRegistered.ShowListOfOrders">
+            <summary>
+            Show all user orders
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewRegistered.ShowListOfCompletedOrders">
+            <summary>
+            Show completed user orders
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewRegistered.ChangeStatusToComplete">
+            <summary>
+            Change order status to complete
+            Input order id
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewRegistered.ChangeProfile">
+            <summary>
+            Change user information
+            Input new information
+            </summary>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewRegistered.Change">
+            <summary>
+            Input new information
+            </summary>
+            <returns>New info</returns>
+        </member>
+        <member name="M:ConsoleEShopMultilayered.PL.ViewRegistered.LogOut">
+            <summary>
+            Log out from account
+            </summary>
+        </member>
+    </members>
+</doc>
